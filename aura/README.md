@@ -1,4 +1,4 @@
-# AURA Store — Production-Grade E-Commerce MVP
+# AURA Store — E-Commerce Site
 
 A modern, full-stack E-Commerce platform built with **Node.js**, **Express.js**, **MongoDB (Mongoose)**, and **Vanilla HTML5/CSS3/JavaScript**.
 
