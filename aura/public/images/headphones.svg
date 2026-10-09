@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e2238" />
+      <stop offset="100%" stop-color="#0f111a" />
+    </radialGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#6366f1" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#bgGrad)" />
+  <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(99,102,241,0.08)" stroke-width="2" />
+  <!-- Headband -->
+  <path d="M 120 220 C 120 120, 280 120, 280 220" fill="none" stroke="url(#metal)" stroke-width="18" stroke-linecap="round" filter="url(#shadow)" />
+  <path d="M 135 200 C 135 130, 265 130, 265 200" fill="none" stroke="url(#neonGlow)" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+  <!-- Left Ear Cup -->
+  <rect x="95" y="190" width="46" height="85" rx="22" fill="url(#metal)" stroke="#6366f1" stroke-width="2" />
+  <rect x="110" y="200" width="22" height="65" rx="10" fill="#0f172a" />
+  <!-- Right Ear Cup -->
+  <rect x="259" y="190" width="46" height="85" rx="22" fill="url(#metal)" stroke="#a855f7" stroke-width="2" />
+  <rect x="268" y="200" width="22" height="65" rx="10" fill="#0f172a" />
+  <!-- Soundwave accents -->
+  <circle cx="200" cy="275" r="4" fill="#6366f1" />
+  <path d="M 185 275 Q 200 265 215 275" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Store — Premium Tech &amp; Hardware Essentials</title>
+  <meta name="description" content="Discover premium audio, mechanical peripherals, titanium wearables, and studio displays with fast shipping and seamless checkout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container nav-inner">
+      <a href="/" class="brand-logo" id="brandLogo">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span>AURA</span>
+        <span class="brand-tag">STORE</span>
+      </a>
+
+      <!-- Search landmark using modern HTML <search> tag -->
+      <search class="header-search">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="searchInput" class="search-input" placeholder="Search devices, audio, accessories..." aria-label="Search products">
+        </div>
+      </search>
+
+      <!-- User & Cart Controls -->
+      <div class="nav-actions">
+        <!-- Auth Button / Profile -->
+        <div id="authContainer">
+          <button type="button" id="openAuthBtn" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Sign In</span>
+          </button>
+        </div>
+
+        <!-- Orders Button (visible when logged in) -->
+        <button type="button" id="myOrdersBtn" class="btn btn-ghost" style="display: none;" title="My Orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Orders</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button type="button" id="openCartBtn" class="btn btn-primary btn-icon" aria-label="Open Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cartBadge" class="badge-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Store Content -->
+  <main id="mainContent">
+    <!-- Hero Banner -->
+    <section class="hero-section container" aria-label="Featured Highlights">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Next-Gen Hardware Collection
+          </div>
+          <h1 class="hero-title">Precision Gear for <span class="text-gradient">Modern Creators</span></h1>
+          <p class="hero-description">
+            Experience peak acoustic performance, tactile mechanical engineering, and titanium craftsmanship crafted for supreme everyday flow.
+          </p>
+          <div class="hero-perks">
+            <div class="perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free Worldwide Shipping &gt; $100</span>
+            </div>
+            <div class="perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>30-Day Hassle-Free Returns</span>
+            </div>
+            <div class="perk-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>2-Year Full Hardware Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Controls (Categories & Sorting) -->
+    <section class="catalog-controls container" aria-label="Product Filters">
+      <div class="controls-row">
+        <!-- Category Pills -->
+        <nav class="category-pills" id="categoryPills" aria-label="Product Categories">
+          <button type="button" class="category-pill active" data-category="All">All Items</button>
+        </nav>
+
+        <!-- Sorting -->
+        <div class="sort-group">
+          <label for="sortSelect" class="sort-label">Sort by:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="newest">Featured &amp; Newest</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Listings Section -->
+    <section class="products-section container" aria-label="Catalog Products">
+      <div class="section-header">
+        <h2 id="catalogHeaderTitle" class="section-title">All Products</h2>
+        <span id="productCountTag" class="product-count-tag">Showing 8 products</span>
+      </div>
+
+      <!-- Grid -->
+      <div id="productsGrid" class="products-grid" role="region" aria-live="polite">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       PRODUCT DETAILS MODAL (<dialog>)
+       ===================================================================== -->
+  <dialog id="productDetailsModal" aria-labelledby="modalProductTitle">
+    <div class="modal-header">
+      <h2 id="modalProductTitle" class="modal-title">Product Details</h2>
+      <button type="button" class="close-modal-btn" id="closeDetailModalBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="product-detail-layout" id="productDetailContent">
+      <!-- Populated dynamically -->
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       SHOPPING CART MODAL (<dialog>)
+       ===================================================================== -->
+  <dialog id="cartModal" aria-labelledby="cartModalTitle">
+    <div class="modal-header">
+      <h2 id="cartModalTitle" class="modal-title">Shopping Cart</h2>
+      <button type="button" class="close-modal-btn" id="closeCartModalBtn" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="cartItemsContainer" class="cart-body">
+      <!-- Cart items injected dynamically -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Tax (8%)</span>
+        <span id="cartTax">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Shipping</span>
+        <span id="cartShipping">Free</span>
+      </div>
+      <div class="cart-total-line">
+        <span>Total</span>
+        <span id="cartTotal" class="text-gradient">$0.00</span>
+      </div>
+      <button type="button" id="proceedCheckoutBtn" class="btn btn-primary" style="width: 100%;">
+        <span>Proceed to Checkout</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       CHECKOUT & ORDER PROCESSING MODAL (<dialog>)
+       ===================================================================== -->
+  <dialog id="checkoutModal" aria-labelledby="checkoutModalTitle">
+    <div class="modal-header">
+      <h2 id="checkoutModalTitle" class="modal-title">Complete Your Order</h2>
+      <button type="button" class="close-modal-btn" id="closeCheckoutModalBtn" aria-label="Close checkout">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Active Checkout Form -->
+    <div id="checkoutFormContainer" class="checkout-body">
+      <form id="orderForm">
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 14px;">1. Shipping Address</h3>
+        <div class="form-group">
+          <label class="form-label" for="shippingFullName">Full Name</label>
+          <input type="text" id="shippingFullName" class="form-input" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="shippingAddress">Street Address</label>
+          <input type="text" id="shippingAddress" class="form-input" required placeholder="123 Innovation Way">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="shippingCity">City</label>
+            <input type="text" id="shippingCity" class="form-input" required placeholder="San Francisco">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="shippingPostal">Postal Code</label>
+            <input type="text" id="shippingPostal" class="form-input" required placeholder="94105">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="shippingCountry">Country</label>
+          <input type="text" id="shippingCountry" class="form-input" required placeholder="United States">
+        </div>
+
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin: 20px 0 14px;">2. Payment Method</h3>
+        <div class="payment-method-selector" id="paymentOptionsGroup">
+          <label class="payment-option selected" id="optCard">
+            <input type="radio" name="paymentMethod" value="Card" checked>
+            <strong>Credit Card</strong>
+          </label>
+          <label class="payment-option" id="optPaypal">
+            <input type="radio" name="paymentMethod" value="PayPal">
+            <strong>PayPal</strong>
+          </label>
+          <label class="payment-option" id="optCod">
+            <input type="radio" name="paymentMethod" value="CashOnDelivery">
+            <strong>Cash On Delivery</strong>
+          </label>
+        </div>
+
+        <div id="cardDetailsBox" style="background: rgba(255,255,255,0.03); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle); margin-bottom: 20px;">
+          <div class="form-group">
+            <label class="form-label">Card Number (Demo Simulation)</label>
+            <input type="text" class="form-input" placeholder="4242 •••• •••• 4242" value="4242 •••• •••• 4242">
+          </div>
+          <div class="form-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Expiry Date</label>
+              <input type="text" class="form-input" placeholder="12/28" value="12/28">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">CVV</label>
+              <input type="text" class="form-input" placeholder="123" value="789">
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(99,102,241,0.06); padding: 16px; border-radius: 8px; margin-bottom: 20px; border: 1px solid rgba(99,102,241,0.2);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span style="color: var(--text-muted);">Order Total:</span>
+            <span id="checkoutOrderTotal" style="font-weight: 800; font-size: 1.15rem; color: var(--text-main);">$0.00</span>
+          </div>
+          <small style="color: var(--text-faint);">Instant simulated settlement via secure mock payment gateway.</small>
+        </div>
+
+        <button type="submit" id="submitOrderBtn" class="btn btn-primary" style="width: 100%;">
+          <span>Place Order &amp; Pay Now</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Order Completed View -->
+    <div id="orderSuccessContainer" class="checkout-body order-success-box" style="display: none;">
+      <div class="success-icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Order Confirmed!</h3>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        Thank you for your purchase. We are processing your order right away.
+      </p>
+      <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 10px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Order ID: <strong id="successOrderId" style="color: var(--accent-primary-light);"></strong></div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Total Paid: <strong id="successOrderTotal" style="color: var(--text-main);"></strong></div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Status: <span class="order-status-badge status-processing">Processing</span></div>
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" id="closeSuccessBtn" class="btn btn-secondary">Keep Browsing</button>
+        <button type="button" id="viewMyOrdersFromSuccessBtn" class="btn btn-primary">View My Orders</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       USER AUTHENTICATION MODAL (LOGIN / REGISTER)
+       ===================================================================== -->
+  <dialog id="authModal" aria-labelledby="authTitle">
+    <div class="modal-header">
+      <h2 id="authTitle" class="modal-title">Welcome to AURA</h2>
+      <button type="button" class="close-modal-btn" id="closeAuthModalBtn" aria-label="Close authentication window">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="auth-tabs" role="tablist">
+      <button type="button" id="tabSignIn" class="auth-tab active" role="tab" aria-selected="true">Sign In</button>
+      <button type="button" id="tabRegister" class="auth-tab" role="tab" aria-selected="false">Create Account</button>
+    </div>
+
+    <div class="auth-body">
+      <!-- Demo quick filler helper -->
+      <div class="demo-credentials-box">
+        <strong>Quick Demo Login:</strong>
+        <div>
+          <button type="button" id="fillCustomerDemo" class="demo-quick-btn">Customer (customer@aurashop.com)</button>
+          <button type="button" id="fillAdminDemo" class="demo-quick-btn">Admin (admin@aurashop.com)</button>
+        </div>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" class="form-input" required placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-input" required placeholder="••••••••">
+        </div>
+        <button type="submit" id="submitLoginBtn" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          <span>Sign In</span>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Name</label>
+          <input type="text" id="regName" class="form-input" required placeholder="Alice Cooper">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-input" required placeholder="alice@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Password (Min. 6 chars)</label>
+          <input type="password" id="regPassword" class="form-input" minlength="6" required placeholder="••••••••">
+        </div>
+        <button type="submit" id="submitRegisterBtn" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          <span>Create Account</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       MY ORDERS HISTORY MODAL (<dialog>)
+       ===================================================================== -->
+  <dialog id="ordersModal" aria-labelledby="ordersTitle">
+    <div class="modal-header">
+      <h2 id="ordersTitle" class="modal-title">My Orders</h2>
+      <button type="button" class="close-modal-btn" id="closeOrdersModalBtn" aria-label="Close orders window">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="ordersListContainer" class="orders-body">
+      <!-- Order cards injected dynamically -->
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       TOAST NOTIFICATION CONTAINER
+       ===================================================================== -->
+  <aside id="toastContainer" aria-live="polite" aria-atomic="true"></aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <span>AURA</span>
+          </div>
+          <p>Industrial design meeting cutting-edge acoustics and ergonomic hardware essentials.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#" class="footer-cat-link" data-category="Audio">Audio</a></li>
+              <li><a href="#" class="footer-cat-link" data-category="Peripherals">Peripherals</a></li>
+              <li><a href="#" class="footer-cat-link" data-category="Wearables">Wearables</a></li>
+              <li><a href="#" class="footer-cat-link" data-category="Displays">Displays</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Order Tracking</a></li>
+              <li><a href="#">Warranty Claim</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Engineered With</h4>
+            <ul>
+              <li><a href="#">Node.js &amp; Express</a></li>
+              <li><a href="#">MongoDB &amp; Mongoose</a></li>
+              <li><a href="#">Vanilla HTML5 / CSS3</a></li>
+              <li><a href="#">Modern Web APIs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AURA Store Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

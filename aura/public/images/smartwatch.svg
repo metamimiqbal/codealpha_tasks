@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="swBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1b2433" />
+      <stop offset="100%" stop-color="#0a0f18" />
+    </radialGradient>
+    <linearGradient id="swRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#swBg)" />
+  <!-- Watch strap -->
+  <path d="M 155 40 L 245 40 L 240 140 L 160 140 Z" fill="#1e293b" />
+  <path d="M 160 260 L 240 260 L 245 360 L 155 360 Z" fill="#1e293b" />
+  <!-- Watch Case -->
+  <rect x="135" y="125" width="130" height="150" rx="36" fill="#334155" stroke="#64748b" stroke-width="3" />
+  <!-- Screen -->
+  <rect x="145" y="135" width="110" height="130" rx="28" fill="#090d16" />
+  <!-- Digital UI -->
+  <circle cx="200" cy="200" r="42" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5" />
+  <circle cx="200" cy="200" r="42" fill="none" stroke="url(#swRing)" stroke-width="5" stroke-dasharray="200" stroke-dashoffset="60" stroke-linecap="round" />
+  <text x="200" y="195" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">10:42</text>
+  <text x="200" y="215" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#10b981" text-anchor="middle">7,840 STEPS</text>
+  <!-- Crown button -->
+  <rect x="265" y="170" width="8" height="24" rx="3" fill="#94a3b8" />
+</svg>

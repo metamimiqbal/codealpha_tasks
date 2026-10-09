@@ -1,0 +1,14 @@
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const path = require('path');
+const api = require('./routes/api');
+const { notFound, errorHandler } = require('./middleware/errors');
+const app = express();
+app.use(express.json({ limit: '32kb' }));
+app.use(cookieParser());
+app.use('/api', api);
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.get('*', (req, res, next) => req.path.startsWith('/api') ? next() : res.sendFile(path.join(__dirname, '..', 'public', 'index.html')));
+app.use(notFound);
+app.use(errorHandler);
+module.exports = app;

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLEM — Modern Mini Social Media</title>
+  <meta name="description" content="BLEM is a sleek, modern social media platform for sharing updates, connecting with creators, and discovering real-time conversations.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- App Container -->
+  <div id="app" class="app-layout">
+    
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="#" class="brand-logo" id="brand-home-link" aria-label="BLEM Home">
+            <span class="logo-icon">✦</span>
+            <span class="logo-text">BLEM</span>
+          </a>
+        </div>
+
+        <div class="nav-search">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="global-search-input" placeholder="Search creators on BLEM..." autocomplete="off">
+            <button id="search-clear-btn" class="search-clear-btn" style="display:none;" aria-label="Clear search">✕</button>
+          </div>
+          <!-- Live search dropdown -->
+          <div id="search-results-dropdown" class="search-dropdown" style="display:none;"></div>
+        </div>
+
+        <div class="nav-right" id="nav-auth-actions">
+          <!-- Populated dynamically by UI module (Guest / User actions) -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="main-container">
+      
+      <!-- Left Sidebar: Navigation & Identity -->
+      <aside class="sidebar-left">
+        <nav class="nav-menu">
+          <button class="nav-item active" id="nav-btn-home" data-view="feed" data-feed="home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home Feed</span>
+          </button>
+          
+          <button class="nav-item" id="nav-btn-explore" data-view="feed" data-feed="explore">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
+            </svg>
+            <span>Explore</span>
+          </button>
+
+          <button class="nav-item" id="nav-btn-profile" data-view="profile" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>My Profile</span>
+          </button>
+        </nav>
+
+        <!-- Current User Card Widget -->
+        <div id="user-sidebar-card" class="user-card-widget">
+          <!-- Populated when user is logged in or guest prompt -->
+        </div>
+
+        <!-- Create Post Quick Button for Mobile/Sidebar -->
+        <button id="sidebar-post-trigger" class="btn btn-primary btn-block sidebar-post-btn" style="display: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Share a Blemm</span>
+        </button>
+      </aside>
+
+      <!-- Center Main Feed Column -->
+      <main class="feed-main-col" id="main-content-area">
+        
+        <!-- Feed Header & Tabs -->
+        <div class="feed-header-bar" id="feed-header-bar">
+          <div class="feed-tabs">
+            <button class="tab-btn active" id="tab-home-feed">Following</button>
+            <button class="tab-btn" id="tab-explore-feed">Global Explore</button>
+          </div>
+          <button class="refresh-feed-btn" id="refresh-feed-btn" title="Refresh feed" aria-label="Refresh feed">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Post Creation Composer Card (Shown when logged in) -->
+        <section id="post-composer" class="composer-card" style="display:none;">
+          <div class="composer-avatar-col">
+            <div id="composer-user-avatar" class="avatar-circle">U</div>
+          </div>
+          <div class="composer-body">
+            <textarea id="composer-textarea" placeholder="What's sparking on your mind? Share on BLEM..." rows="3" maxlength="500"></textarea>
+            <div class="composer-actions">
+              <div class="composer-hints">
+                <span id="char-counter" class="char-count">500</span>
+              </div>
+              <button id="publish-post-btn" class="btn btn-primary btn-sm">
+                <span>Publish</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dynamic Profile Banner (Shown when inspecting a user profile) -->
+        <section id="profile-view-container" class="profile-hero-card" style="display:none;"></section>
+
+        <!-- Feed Posts Stream Container -->
+        <div id="posts-stream" class="posts-stream-container">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="stream-loader" class="stream-loader" style="display:none;">
+          <div class="spinner"></div>
+          <span>Loading BLEM stream...</span>
+        </div>
+      </main>
+
+      <!-- Right Sidebar: Suggested People & Trending -->
+      <aside class="sidebar-right">
+        
+        <!-- Suggested Users Widget -->
+        <div class="widget-box" id="suggested-users-widget">
+          <div class="widget-header">
+            <h3>Suggested Creators</h3>
+          </div>
+          <div id="suggested-users-list" class="suggested-users-list">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- BLEM Platform Info Card -->
+        <div class="widget-box platform-info-card">
+          <h4>About BLEM</h4>
+          <p>A fast, maintainable mini social media app built with Express.js, MongoDB, Mongoose, and modern Vanilla web standards.</p>
+          <div class="meta-tags">
+            <span class="tag">REST API</span>
+            <span class="tag">JWT Auth</span>
+            <span class="tag">Live Likes</span>
+            <span class="tag">Comments</span>
+          </div>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>API Server: Operational</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Modal Dialog: Authentication (Login / Register) -->
+  <dialog id="auth-dialog" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="auth-modal-title">Welcome to BLEM</h2>
+        <button type="button" class="modal-close-btn" id="auth-modal-close" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button type="button" class="modal-tab-btn active" id="auth-tab-login">Log In</button>
+        <button type="button" class="modal-tab-btn" id="auth-tab-register">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="login-identifier">Username or Email</label>
+          <input type="text" id="login-identifier" required placeholder="e.g. johndoe or john@example.com" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <div id="login-error-msg" class="form-error-banner" style="display:none;"></div>
+        <button type="submit" class="btn btn-primary btn-block" id="login-submit-btn">Log In</button>
+
+        <div class="demo-auth-divider">
+          <span>or test with 1-click</span>
+        </div>
+        <button type="button" class="btn btn-secondary btn-block" id="demo-login-btn">Log in as Demo User</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form" style="display:none;" novalidate>
+        <div class="form-group">
+          <label for="reg-name">Display Name</label>
+          <input type="text" id="reg-name" required placeholder="e.g. Maya Chen" maxlength="50" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" required placeholder="e.g. mayachen" maxlength="30" autocomplete="username">
+          <span class="field-hint">Letters, numbers, and underscores only</span>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" required placeholder="maya@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required placeholder="Minimum 6 characters" minlength="6" autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="reg-bio">Bio (Optional)</label>
+          <input type="text" id="reg-bio" placeholder="Tell the BLEM community about yourself" maxlength="200">
+        </div>
+        <div id="register-error-msg" class="form-error-banner" style="display:none;"></div>
+        <button type="submit" class="btn btn-primary btn-block" id="register-submit-btn">Create BLEM Account</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: Edit Profile -->
+  <dialog id="edit-profile-dialog" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Profile</h2>
+        <button type="button" class="modal-close-btn" id="edit-profile-close" aria-label="Close modal">✕</button>
+      </div>
+      <form id="edit-profile-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="edit-name">Display Name</label>
+          <input type="text" id="edit-name" required maxlength="50">
+        </div>
+        <div class="form-group">
+          <label for="edit-bio">Bio</label>
+          <textarea id="edit-bio" rows="3" maxlength="200" placeholder="A short bio..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="edit-avatar">Avatar URL (Optional)</label>
+          <input type="url" id="edit-avatar" placeholder="https://images.unsplash.com/...">
+        </div>
+        <div id="edit-profile-error" class="form-error-banner" style="display:none;"></div>
+        <button type="submit" class="btn btn-primary btn-block" id="edit-profile-save-btn">Save Changes</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="/js/api.js"></script>
+  <script src="/js/state.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

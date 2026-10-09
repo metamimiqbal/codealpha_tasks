@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="mouseBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1b2133" />
+      <stop offset="100%" stop-color="#0b0e17" />
+    </radialGradient>
+    <linearGradient id="mouseAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#mouseBg)" />
+  <!-- Ergonomic body -->
+  <path d="M 140 160 C 140 100, 260 100, 260 160 C 265 240, 255 310, 200 310 C 145 310, 135 240, 140 160 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <!-- Center scroll wheel slot -->
+  <rect x="194" y="125" width="12" height="35" rx="6" fill="#0f172a" />
+  <rect x="196" y="130" width="8" height="20" rx="4" fill="url(#mouseAccent)" />
+  <!-- Subtle click divide line -->
+  <line x1="200" y1="100" x2="200" y2="125" stroke="#475569" stroke-width="1.5" />
+  <line x1="200" y1="160" x2="200" y2="195" stroke="#475569" stroke-width="1.5" />
+  <!-- Thumb rest flare -->
+  <path d="M 140 190 Q 115 225 135 265" fill="none" stroke="url(#mouseAccent)" stroke-width="3" stroke-linecap="round" />
+</svg>
